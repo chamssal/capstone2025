@@ -1,4 +1,12 @@
-outputs/
-pitch_45_v2/
-__pycache__/
-*.pyc
+# .gitignore
+# 모든 파일 무시
+*
+
+# 예외 폴더/파일만 명시
+!lib/
+!tools/
+!configs/
+!utils/
+!.gitignore
+!README.md
+
