@@ -1,0 +1,4 @@
+# ninja log v5
+0	2827	1751508612124467519	/home/airkon4/MonoDETR/lib/models/monodetr/ops/build/temp.linux-x86_64-cpython-38/home/airkon4/MonoDETR/lib/models/monodetr/ops/src/cpu/ms_deform_attn_cpu.o	7bf40e2562b13c48
+1	8873	1751508618130883218	/home/airkon4/MonoDETR/lib/models/monodetr/ops/build/temp.linux-x86_64-cpython-38/home/airkon4/MonoDETR/lib/models/monodetr/ops/src/vision.o	11927069281c1ebc
+1	26351	1751508635666091818	/home/airkon4/MonoDETR/lib/models/monodetr/ops/build/temp.linux-x86_64-cpython-38/home/airkon4/MonoDETR/lib/models/monodetr/ops/src/cuda/ms_deform_attn_cuda.o	5e10435faa29992a

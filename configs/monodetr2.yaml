@@ -1,0 +1,92 @@
+random_seed: 444
+
+## Dataset 설정
+dataset:
+  type: &dataset_type 'KITTI'
+  root_dir: '/workspace/airkon4/Downloads/4K'
+  train_split: 'train'
+  test_split: 'val'
+  batch_size: 8
+  use_3d_center: True
+  class_merging: False
+  use_dontcare: False
+  bbox2d_type: 'anno'
+  meanshape: False
+  writelist: ['Car']
+  clip_2d: False
+
+  aug_pd: False
+  aug_crop: False
+  random_flip: 0.0
+  random_crop: 0.0
+  scale: 0.0
+  shift: 0.0
+
+  depth_scale: 'normal'
+
+## 모델 설정
+model_name: 'monodetr'
+model:
+  num_classes: 1
+  return_intermediate_dec: True
+  device: 'cuda'
+  backbone: 'resnet50'
+  train_backbone: False
+  num_feature_levels: 4
+  dilation: False
+  position_embedding: 'sine'
+  masks: False
+
+  mode: LID
+  num_depth_bins: 80
+  depth_min: 1e-3
+  depth_max: 60.0
+
+  with_box_refine: True
+  two_stage: False
+  use_dab: False
+  use_dn: False
+  two_stage_dino: False
+  init_box: False
+  enc_layers: 3
+  dec_layers: 3
+  hidden_dim: 256
+  dim_feedforward: 256
+  dropout: 0.1
+  nheads: 8
+  num_queries: 50
+  enc_n_points: 4
+  dec_n_points: 4
+
+  set_cost_class: 2
+  set_cost_bbox: 5
+  set_cost_giou: 2
+  set_cost_3dcenter: 10
+
+  aux_loss: True
+  cls_loss_coef: 2
+  focal_alpha: 0.25
+  bbox_loss_coef: 5
+  giou_loss_coef: 2
+  3dcenter_loss_coef: 10
+  dim_loss_coef: 1
+  angle_loss_coef: 1
+  depth_loss_coef: 1
+  depth_map_loss_coef: 1
+
+## Trainer - 로그만 저장
+trainer:
+  max_epoch: 0
+  gpu_ids: '0'
+  save_path: '/workspace/airkon4/MonoDETR/outputs/inference_run'
+  save_all: False
+
+## Tester - 추론만 수행
+tester:
+  type: *dataset_type
+  mode: single
+  checkpoint: '/workspace/airkon4/MonoDETR/tools/200.pth'
+  threshold: 0.0
+  topk: 50
+  save_results: True
+  result_dir: '/workspace/airkon4/MonoDETR/outputs/inference_results'
