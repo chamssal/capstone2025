@@ -3,10 +3,10 @@
 *
 
 # 예외 폴더/파일만 명시
-!lib/
-!tools/
-!configs/
-!utils/
-!.gitignore
-!README.md
-
+# !lib/
+# !tools/
+# !configs/
+# !utils/
+# !.gitignore
+# !README.md
+# !configs/output4K/

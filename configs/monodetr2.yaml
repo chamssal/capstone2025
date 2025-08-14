@@ -3,7 +3,7 @@ random_seed: 444
 ## Dataset 설정
 dataset:
   type: &dataset_type 'KITTI'
-  root_dir: '/workspace/airkon4/Downloads/4K'
+  root_dir: '/workspace/airkon4/Downloads/FHD'
   train_split: 'train'
   test_split: 'val'
   batch_size: 8
@@ -78,15 +78,15 @@ model:
 trainer:
   max_epoch: 0
   gpu_ids: '0'
-  save_path: '/workspace/airkon4/MonoDETR/outputs/inference_run'
+  save_path: 'configs/outputFHD/'
   save_all: False
 
 ## Tester - 추론만 수행
 tester:
   type: *dataset_type
   mode: single
-  checkpoint: '/workspace/airkon4/MonoDETR/tools/200.pth'
+  checkpoint: 200
   threshold: 0.0
   topk: 50
   save_results: True
-  result_dir: '/workspace/airkon4/MonoDETR/outputs/inference_results'
+  result_dir: 'configs/outputFHD/'

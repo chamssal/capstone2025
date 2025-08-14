@@ -104,13 +104,13 @@ lr_scheduler:
 
 
 trainer:
-  max_epoch: 2
+  max_epoch: 200
 
   gpu_ids: '1'
   save_frequency: 1  # checkpoint save interval (in epoch)
   # resume_model: True
   # pretrain_model: path/to/ckpt
-  save_path: '/workspace/airkon4/MonoDETR/configs/outputs/pitch_0'
+  save_path: './configs/outputs/pitch_0'
   save_all: True  # False for only savng the best and latest ckpts
   use_dn: False
   scalar: 5
@@ -121,6 +121,6 @@ trainer:
 tester:
   type: *dataset_type
   mode: single  # 'single' or 'all'; 'all' to evaluate all ckpts in the folder
-  checkpoint: 2  # the start ckpt epoch for 'all'
+  checkpoint: 200  # the start ckpt epoch for 'all'
   threshold: 0.0  # confidence filter
   topk: 50

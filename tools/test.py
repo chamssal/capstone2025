@@ -16,7 +16,7 @@ random.seed(42)
 random.shuffle(image_ids)
 
 # 8:2 비율 분할
-split_idx = int(len(image_ids) * 1.0)
+split_idx = int(len(image_ids) * 0.7)
 val_ids = image_ids[:split_idx]
 train_ids = image_ids[split_idx:]
 

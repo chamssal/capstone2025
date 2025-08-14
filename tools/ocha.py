@@ -60,8 +60,8 @@ def parse_kitti_txt(path, mode="pred"):
     return np.array(coords)
 
 # 경로 설정
-pred_dir = "/workspace/airkon4/MonoDETR/pitch_45_v2/monodetr/outputs/data"
-gt_dir = "/workspace/airkon4/Downloads/KITTI/training/label_2"
+pred_dir = "/workspace/airkon4/MonoDETR/configs/outputFHD/monodetr/outputs/data"
+gt_dir = "/workspace/airkon4/Downloads/FHD/training/label_2"
 
 all_results = []
 
@@ -89,7 +89,7 @@ for filename in sorted(os.listdir(pred_dir)):
         all_results.append(match)
 
 # 결과 저장
-output_csv = "all_pred_to_nearest_gt_errors.csv"
+output_csv = "FHD_error.csv"
 with open(output_csv, "w", newline='') as csvfile:
     fieldnames = ["frame", "pred_idx", "gt_idx", "pred_x", "pred_z", "gt_x", "gt_z", "error_m"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)

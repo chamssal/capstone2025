@@ -26,4 +26,4 @@ def filter_txt_by_score(folder_path, min_score=1.0):
 
     print(f"✅ 완료: {len(txt_files)}개 파일에서 score < {min_score} 라인을 필터링했습니다.")
 
-filter_txt_by_score('/workspace/airkon4/MonoDETR/pitch_45_v2/monodetr/outputs/data')
+filter_txt_by_score('/workspace/airkon4/MonoDETR/configs/outputFHD/monodetr/outputs/data')
